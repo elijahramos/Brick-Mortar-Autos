@@ -1,2 +1,2 @@
 # Brick-Mortar-Autos
-CECS 326 Database Project
+CECS 323 Database Project
