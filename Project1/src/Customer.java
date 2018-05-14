@@ -9,8 +9,8 @@ public class Customer {
     static String USER;
     static String PASS;
     static String DBNAME;
-    static final String JDBC_DRIVER = "org.apache.derby.jdbc.ClientDriver";
-    static String DB_URL = "jdbc:derby://localhost:1527/";
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static String DB_URL = "jdbc:mysql://localhost:3306/";
     
     public static void main(String[] args) {
         System.out.println("Starting Program");
@@ -23,9 +23,11 @@ public class Customer {
         PASS = in.nextLine();
         //Constructing the database URL connection string
         DB_URL = DB_URL + DBNAME + ";user="+ USER + ";password=" + PASS;
+        
         Connection conn = null; //initialize the connection
         Statement stmt = null;  //initialize the statement that we're using
-        try {
+        try
+        {
             //STEP 2: Register JDBC driver
             Class.forName(JDBC_DRIVER);
 
@@ -33,29 +35,41 @@ public class Customer {
             System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL);
         }
-        catch (SQLException se) {
+        
+        catch (SQLException se) 
+        {
             //Handle errors for JDBC
             se.printStackTrace();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             //Handle errors for Class.forName
             e.printStackTrace();
-        } finally {
+        }
+        finally
+        {
             //finally block used to close resources
-            try {
-                if (stmt != null) {
+            try
+            {
+                if (stmt != null)
+                {
                     stmt.close();
                 }
-            } catch (SQLException se2) {
+            }
+            catch (SQLException se2)
+            {
             }// nothing we can do
-            try {
-                if (conn != null) {
+            try
+            {
+                if (conn != null)
+                {
                     conn.close();
                 }
-            } catch (SQLException se) {
+            }
+            catch (SQLException se)
+            {
                 se.printStackTrace();
-        //end finally try
-                                      }
-                   }
+            }
+        }
         //Initialize the model, which represents the Customer and its attributes.
         Model m = new Model();
         
