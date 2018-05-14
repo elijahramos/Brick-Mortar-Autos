@@ -5,6 +5,7 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 //Handles events in the GUI
 public class Controller implements ActionListener {
@@ -20,6 +21,21 @@ public class Controller implements ActionListener {
     //Take customer info in the GUI and store into model
     public void actionPerformed(ActionEvent e) {
 	String c = e.getActionCommand();
+        
+        if(c.equals("Go"))
+        {
+            if(view.custBox.isSelected())
+            {
+                view.custMenu();
+                view.registerListener2(Customer.c);
+            }
+            if(view.dataBox.isSelected())
+            {
+                view.queries();
+                view.registerListener3(Customer.c);
+            }
+        }
+        
         if(c.equals("Submit Information")) //Check if submit button has been pressed
         {
             //Get data from JTextFields
@@ -64,6 +80,14 @@ public class Controller implements ActionListener {
                             dateOfLastPayment);
             }
             else //Display window rejecting loan request
+            {
+                view.error();
+            }
+        }
+        
+        if(c.equals("Display"))
+        {
+            if(view.box1.isSelected())
             {
                 view.error();
             }
