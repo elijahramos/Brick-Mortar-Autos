@@ -54,6 +54,8 @@ public class Customer {
             } catch (SQLException se) {
                 se.printStackTrace();
         //end finally try
+                                      }
+                   }
         //Initialize the model, which represents the Customer and its attributes.
         Model m = new Model();
         
@@ -64,7 +66,5 @@ public class Customer {
         //the model and the view in order to carry out the necessary calculations.
         c = new Controller(v, m);
         v.registerListener(c);
-                                      }
-                   }
     }
 }
