@@ -8,21 +8,22 @@ public class Customer {
     static Controller c;
     static String USER;
     static String PASS;
-    static String DBNAME;
+    //static String DBNAME;
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static String DB_URL = "jdbc:mysql://localhost:3306/";
     
     public static void main(String[] args) {
         System.out.println("Starting Program");
         Scanner in = new Scanner(System.in);
-        System.out.print("Name of the database (not the user account): ");
-        DBNAME = in.nextLine();
+//        System.out.print("Name of the database (not the user account): ");
+//        DBNAME = in.nextLine();
         System.out.print("Database user name: ");
         USER = in.nextLine();
         System.out.print("Database password: ");
         PASS = in.nextLine();
         //Constructing the database URL connection string
-        DB_URL = DB_URL + DBNAME + ";user="+ USER + ";password=" + PASS;
+        //DB_URL = DB_URL + DBNAME + ";user="+ USER + ";password=" + PASS;
+        DB_URL = DB_URL + ";user="+ USER + ";password=" + PASS;
         
         Connection conn = null; //initialize the connection
         Statement stmt = null;  //initialize the statement that we're using
