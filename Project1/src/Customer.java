@@ -7,7 +7,7 @@ import java.sql.*;
 public class Customer{
 
     private static Customer singletonInstance;
-    private static Connection con;
+    public static Connection con;
     static Controller c;
     
       public static void main(String[] args) throws ClassNotFoundException, SQLException {

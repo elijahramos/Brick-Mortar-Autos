@@ -325,8 +325,10 @@ public class Model {
     
     public ResultSet execQuery1(String sql)
     {
+        Statement stmt = null;
         try
         {
+            stmt = Customer.con.createStatement();
             rs = stmt.executeQuery(sql);
         }
         catch (SQLException se)
