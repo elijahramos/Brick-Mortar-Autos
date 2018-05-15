@@ -94,7 +94,7 @@ public class Controller implements ActionListener {
             
             if(view.box2.isSelected())
             {
-                model.execQuery2("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color != 'Magenta' ORDER BY firstName");
+                view.printQuery2(model.execQuery2("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color != 'Magenta' ORDER BY firstName"));
             }
             
             if(view.box3.isSelected())

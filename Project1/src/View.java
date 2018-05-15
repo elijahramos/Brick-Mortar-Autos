@@ -888,4 +888,38 @@ public class View extends JFrame {
             e.printStackTrace();
         }
     }
+    
+    public void printQuery2(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Address", "Phone #", "Last Purchase Date");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String phone = rs.getString("phone");
+                String make = rs.getString("make");
+                String model = rs.getString("model");
+                String yearMade = rs.getString("yearMade");
+                String lastPurchase = rs.getString("lastPurchaseDate");
+
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(phone), dispNull(make), dispNull(model), dispNull(yearMade), dispNull(lastPurchase));
+            }
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
 }
