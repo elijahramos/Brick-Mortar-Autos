@@ -1,77 +1,24 @@
 //Elijah Ramos
 //Model.java , View.java , Controller.java
 //Contains the main method that instantiates the model, view, and controller objects.
+
 import java.sql.*;
-import java.util.Scanner;
 
-public class Customer {
+public class Customer{
+
+    private static Customer singletonInstance;
+    private static Connection con;
     static Controller c;
-    static String USER;
-    static String PASS;
-    //static String DBNAME;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static String DB_URL = "jdbc:mysql://localhost:3306/";
     
-    public static void main(String[] args) {
-        System.out.println("Starting Program");
-        Scanner in = new Scanner(System.in);
-//        System.out.print("Name of the database (not the user account): ");
-//        DBNAME = in.nextLine();
-        System.out.print("Database user name: ");
-        USER = in.nextLine();
-        System.out.print("Database password: ");
-        PASS = in.nextLine();
-        //Constructing the database URL connection string
-        //DB_URL = DB_URL + DBNAME + ";user="+ USER + ";password=" + PASS;
-        DB_URL = DB_URL + ";user="+ USER + ";password=" + PASS;
+      public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String DB_URL = "jdbc:mysql://cecs-db01.coe.csulb.edu/cecs323sec5g9";
+        String USER = "cecs323sec5n12";
+        String PASS = "uef7oo";
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection(DB_URL, USER, PASS);
+        con.setAutoCommit(false);
         
-        Connection conn = null; //initialize the connection
-        Statement stmt = null;  //initialize the statement that we're using
-        try
-        {
-            //STEP 2: Register JDBC driver
-            Class.forName(JDBC_DRIVER);
-
-            //STEP 3: Open a connection
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL);
-        }
-        
-        catch (SQLException se) 
-        {
-            //Handle errors for JDBC
-            se.printStackTrace();
-        } catch (Exception e)
-        {
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        }
-        finally
-        {
-            //finally block used to close resources
-            try
-            {
-                if (stmt != null)
-                {
-                    stmt.close();
-                }
-            }
-            catch (SQLException se2)
-            {
-            }// nothing we can do
-            try
-            {
-                if (conn != null)
-                {
-                    conn.close();
-                }
-            }
-            catch (SQLException se)
-            {
-                se.printStackTrace();
-            }
-        }
-        //Initialize the model, which represents the Customer and its attributes.
+         //Initialize the model, which represents the Customer and its attributes.
         Model m = new Model();
         
         //Initialize the view, which manages the GUI.
@@ -81,5 +28,13 @@ public class Customer {
         //the model and the view in order to carry out the necessary calculations.
         c = new Controller(v, m);
         v.registerListener(c);
+      }  
+    
+    public static Customer getInstance() throws SQLException, ClassNotFoundException
+    {
+        if (singletonInstance == null)
+            singletonInstance = new Customer();
+        
+        return singletonInstance;
     }
 }

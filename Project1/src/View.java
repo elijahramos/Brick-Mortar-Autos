@@ -5,6 +5,7 @@
 
 import java.awt.Component;
 import javax.swing.*;
+import java.sql.*;
 
 public class View extends JFrame {
     //Initialize GUI componenets
@@ -846,6 +847,45 @@ public class View extends JFrame {
         
         query.pack();
         query.setVisible(true);
-        
+    }
+    
+    public static String dispNull (String input) {
+        //because of short circuiting, if it's null, it never checks the length.
+        if (input == null || input.length() == 0)
+            return "N/A";
+        else
+            return input;
+    }
+    
+    public void printQuery1(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Address", "Phone #", "Last Purchase Date");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String address = rs.getString("address");
+                String phone = rs.getString("phone");
+                String lastPurchase = rs.getString("lastPurchaseDate");
+
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(address), dispNull(phone), dispNull(lastPurchase));
+            }
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
     }
 }

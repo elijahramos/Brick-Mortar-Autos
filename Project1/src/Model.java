@@ -6,6 +6,7 @@
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.sql.*;
 
 public class Model {
     //Initialize the attributes to containe the information needed from the customer
@@ -26,6 +27,8 @@ public class Model {
     private int yearsPaid;                              //Number of years the loan is repaid
     private double creditScore;                         //Customer's credit score
     private double spouseCreditScore;                   //Spouse's credit score
+    private Statement stmt = null;
+    private ResultSet rs;
     
     //Default constructor initializes all attributes at default values.
     Model()
@@ -318,5 +321,500 @@ public class Model {
         {
             return monthNames[date.get(Calendar.MONTH)] + " " + date.get(Calendar.DAY_OF_MONTH) + ", " +  (date.get(Calendar.YEAR) + yearsPaid);
         }
+    }
+    
+    public ResultSet execQuery1(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery2(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery3(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery4(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery5(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery6(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery7(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery8(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery9(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery10(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery11(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery12(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery13(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery14(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
+    }
+    
+    public ResultSet execQuery15(String sql)
+    {
+        try
+        {
+            rs = stmt.executeQuery(sql);
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        finally
+        {
+            //finally block used to close resources
+            try
+            {
+                if (stmt != null)
+                {
+                    stmt.close();
+                }
+            }
+            catch (SQLException se2)
+            {
+            }
+        }
+        return rs;
     }
 }
