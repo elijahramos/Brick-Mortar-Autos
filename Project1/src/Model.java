@@ -27,7 +27,6 @@ public class Model {
     private int yearsPaid;                              //Number of years the loan is repaid
     private double creditScore;                         //Customer's credit score
     private double spouseCreditScore;                   //Spouse's credit score
-    private Statement stmt;
     private ResultSet rs;
     
     //Default constructor initializes all attributes at default values.
