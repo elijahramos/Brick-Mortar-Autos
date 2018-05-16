@@ -89,22 +89,22 @@ public class Controller implements ActionListener {
         {
             if(view.box1.isSelected())
             {
-                view.printQuery1(model.execQuery1("SELECT firstName, lastName, address, phone, lastPurchaseDate FROM customers WHERE lastPurchaseDate <= \"12-12-12\" ORDER BY lastName ASC"));
+                view.printQuery1(model.execQuery("SELECT firstName, lastName, address, phone, lastPurchaseDate FROM customers WHERE lastPurchaseDate <= \"12-12-12\" ORDER BY lastName ASC"));
             }
             
             if(view.box2.isSelected())
             {
-                view.printQuery2(model.execQuery2("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color != 'Magenta' ORDER BY firstName"));
+                view.printQuery2(model.execQuery("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color != 'Magenta' ORDER BY firstName"));
             }
             
             if(view.box3.isSelected())
             {
-                model.execQuery3("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color = 'Magenta' ORDER BY firstName");
+                model.execQuery("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color = 'Magenta' ORDER BY firstName");
             }
             
             if(view.box4.isSelected())
             {
-                model.execQuery4("SELECT firstName, lastName, phone, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID WHERE YEAR(lastPurchaseDate) - YEAR(dateLastPay) < 2 ORDER BY firstName");
+                model.execQuery("SELECT firstName, lastName, phone, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID WHERE YEAR(lastPurchaseDate) - YEAR(dateLastPay) < 2 ORDER BY firstName");
             }
             
             if(view.box5.isSelected())

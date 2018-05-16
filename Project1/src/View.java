@@ -875,6 +875,7 @@ public class View extends JFrame {
                 System.out.printf(displayFormat,
                         dispNull(first), dispNull(last), dispNull(address), dispNull(phone), dispNull(lastPurchase));
             }
+        System.out.println();
         rs.close();
         }
         catch (SQLException se)
@@ -891,8 +892,8 @@ public class View extends JFrame {
     
     public void printQuery2(ResultSet rs)
     {
-        String displayFormat="%-5s%-15s%-15s%-15s%-15s%-15s%-15s\n";
-        System.out.printf(displayFormat, "First Name", "Last Name", "Address", "Phone #", "Last Purchase Date");
+        String displayFormat="%-5s%-15s%-15s%-15s%-15s%-5s%-5s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Phone #", "Make", "Model", "Year Made", "Last Purchase Date");
         try
         {
         while (rs.next()) {
@@ -909,6 +910,7 @@ public class View extends JFrame {
                 System.out.printf(displayFormat,
                         dispNull(first), dispNull(last), dispNull(phone), dispNull(make), dispNull(model), dispNull(yearMade), dispNull(lastPurchase));
             }
+        System.out.println();
         rs.close();
         }
         catch (SQLException se)
