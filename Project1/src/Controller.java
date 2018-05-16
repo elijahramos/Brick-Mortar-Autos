@@ -149,17 +149,17 @@ public class Controller implements ActionListener {
             
             if(view.box13.isSelected())
             {
-                model.execQuery("SELECT MONTH(dateLastPay), COUNT(carType) AS \"Cars Sold\" FROM sale INNER JOIN car ON car.VIN = sale.VIN WHERE carType = 'Convertible' ORDER BY \"Cars Sold\" DESC");
+                view.printQuery13(model.execQuery("SELECT MONTH(dateLastPay), COUNT(carType) AS \"Cars Sold\" FROM sale INNER JOIN car ON car.VIN = sale.VIN WHERE carType = 'Convertible' ORDER BY \"Cars Sold\" DESC"));
             }
             
             if(view.box14.isSelected())
             {
-                model.execQuery("SELECT model, make, yearMade, price, stockOfModel FROM car WHERE model = '328i' AND make = 'BMW' ORDER BY make, model, yearMade DESC");
+                view.printQuery14(model.execQuery("SELECT model, make, yearMade, price, stockOfModel FROM car WHERE model = '328i' AND make = 'BMW' ORDER BY make, model, yearMade DESC"));
             }
             
             if(view.box15.isSelected())
             {
-                model.execQuery("SELECT model, make, color, price FROM car WHERE model = '328i' AND make = 'BMW' AND color = 'Red' ORDER BY yearMade DESC");
+                view.printQuery15(model.execQuery("SELECT model, make, color, price FROM car WHERE model = '328i' AND make = 'BMW' AND color = 'Red' ORDER BY yearMade DESC"));
             }
         }
     }

@@ -1244,4 +1244,100 @@ public class View extends JFrame {
             e.printStackTrace();
         }
     }
+    
+    public void printQuery13(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s\n";
+        System.out.printf(displayFormat, "Month", "Count");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String month = rs.getString("MONTH(dateLastPay)");
+                String count = rs.getString("Cars Sold");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(month), dispNull(count));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery14(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "Model", "Make", "Year Made", "Price", "Stock of Model");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String model = rs.getString("model");
+                String make = rs.getString("make");
+                String yearMade = rs.getString("yearMade");
+                String price = rs.getString("price");
+                String stock = rs.getString("stockOfModel");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(model), dispNull(make), dispNull(yearMade), dispNull(price), dispNull(stock));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery15(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "Model", "Make", "Color", "Price");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String model = rs.getString("model");
+                String make = rs.getString("make");
+                String color = rs.getString("color");
+                String price = rs.getString("price");
+                
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(model), dispNull(make), dispNull(color), dispNull(price));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
 }
