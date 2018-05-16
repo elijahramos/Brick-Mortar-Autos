@@ -161,6 +161,21 @@ public class Controller implements ActionListener {
             {
                 view.printQuery15(model.execQuery("SELECT model, make, color, price FROM car WHERE model = '328i' AND make = 'BMW' AND color = 'Red' ORDER BY yearMade DESC"));
             }
+            
+            if(view.box16.isSelected())
+            {
+                //insert logic here
+            }
+            
+            if(view.box17.isSelected())
+            {
+                //insert logic here
+            }
+            
+            if(view.box18.isSelected())
+            {
+                //insert logic here
+            }
         }
     }
 }

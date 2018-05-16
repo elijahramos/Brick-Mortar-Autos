@@ -63,6 +63,9 @@ public class View extends JFrame {
     JCheckBox box13;
     JCheckBox box14;
     JCheckBox box15;
+    JCheckBox box16;
+    JCheckBox box17;
+    JCheckBox box18;
     JPanel contentPane3;
     JButton display;
     
@@ -697,6 +700,9 @@ public class View extends JFrame {
         box13 = new JCheckBox("Query 13");
         box14 = new JCheckBox("Query 14");
         box15 = new JCheckBox("Query 15");
+        box16 = new JCheckBox("View 1");
+        box17 = new JCheckBox("View 2");
+        box18 = new JCheckBox("Update");
         
         contentPane3.add(box1);
         contentPane3.add(box2);
@@ -713,6 +719,9 @@ public class View extends JFrame {
         contentPane3.add(box13);
         contentPane3.add(box14);
         contentPane3.add(box15);
+        contentPane3.add(box16);
+        contentPane3.add(box17);
+        contentPane3.add(box18);
         
         display = new JButton("Display");
         contentPane3.add(display);
@@ -837,13 +846,37 @@ public class View extends JFrame {
                              25,
                              SpringLayout.NORTH, box14);
         
-        //display
+        //box15
+        layout.putConstraint(SpringLayout.WEST, box16,
+                             5,
+                             SpringLayout.WEST, contentPane3);
+        layout.putConstraint(SpringLayout.NORTH, box16,
+                             25,
+                             SpringLayout.NORTH, box15);
+        
+        //cust_cars View
+        layout.putConstraint(SpringLayout.WEST, box17,
+                             5,
+                             SpringLayout.WEST, contentPane3);
+        layout.putConstraint(SpringLayout.NORTH, box17,
+                             25,
+                             SpringLayout.NORTH, box16);
+        
+        //employee_sales View
+        layout.putConstraint(SpringLayout.WEST, box18,
+                             5,
+                             SpringLayout.WEST, contentPane3);
+        layout.putConstraint(SpringLayout.NORTH, box18,
+                             25,
+                             SpringLayout.NORTH, box17);
+        
+        //update Queries
         layout.putConstraint(SpringLayout.WEST, display,
                              5,
                              SpringLayout.WEST, contentPane3);
         layout.putConstraint(SpringLayout.NORTH, display,
                              25,
-                             SpringLayout.NORTH, box15);
+                             SpringLayout.NORTH, box18);
         
         query.pack();
         query.setVisible(true);
