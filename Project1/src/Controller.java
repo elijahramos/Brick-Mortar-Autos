@@ -109,57 +109,57 @@ public class Controller implements ActionListener {
             
             if(view.box5.isSelected())
             {
-                model.execQuery("SELECT firstName, lastName, department, unusedVacationDays FROM employee WHERE unusedVacationDays >= 1 ORDER BY lastName ASC");
+                view.printQuery5(model.execQuery("SELECT firstName, lastName, department, unusedVacationDays FROM employee WHERE unusedVacationDays >= 1 ORDER BY lastName ASC"));
             }
             
             if(view.box6.isSelected())
             {
-                
+                view.printQuery6(model.execQuery("SELECT firstName,lastName,credentialsName, payRate FROM employee INNER JOIN credential ON credential.employeeID = employee.employeeID ORDER BY payRate DESC"));
             }
             
             if(view.box7.isSelected())
             {
-                
+                view.printQuery7(model.execQuery("SELECT firstName,lastName,salesCount FROM employee ORDER BY salesCount DESC LIMIT 3"));
             }
             
             if(view.box8.isSelected())
             {
-                
+                view.printQuery8(model.execQuery("SELECT firstName,lastName,grossSales FROM employee ORDER BY grossSales DESC LIMIT 3"));
             }
             
             if(view.box9.isSelected())
             {
-                
+                view.printQuery9(model.execQuery("SELECT firstName,lastName,loyalSales FROM sale INNER JOIN employee ON sale.employeeID = employee.employeeID ORDER BY loyalSales DESC LIMIT 3"));
             }
             
             if(view.box10.isSelected())
             {
-                
+                view.printQuery10(model.execQuery("SELECT make, model, yearMade FROM car INNER JOIN sale ON car.VIN = sale.VIN AND car.model = sale.modelType WHERE (2018 - YEAR(sale.dateLastPay)) <= 3  ORDER BY \"Popular Cars\" ASC"));
             }
             
             if(view.box11.isSelected())
             {
-                
+                view.printQuery11(model.execQuery("SELECT make, model, yearMade, stockOfModel, carType FROM car WHERE carType = 'Electric' ORDER BY stockOfModel DESC"));
             }
             
             if(view.box12.isSelected())
             {
-                
+                view.printQuery12(model.execQuery("SELECT make, model, yearMade, carType FROM car INNER JOIN sale ON sale.dateLastPay >= \"01-01-01\" WHERE carType = 'Electric' ORDER BY carType DESC"));
             }
             
             if(view.box13.isSelected())
             {
-                
+                model.execQuery("SELECT MONTH(dateLastPay), COUNT(carType) AS \"Cars Sold\" FROM sale INNER JOIN car ON car.VIN = sale.VIN WHERE carType = 'Convertible' ORDER BY \"Cars Sold\" DESC");
             }
             
             if(view.box14.isSelected())
             {
-                
+                model.execQuery("SELECT model, make, yearMade, price, stockOfModel FROM car WHERE model = '328i' AND make = 'BMW' ORDER BY make, model, yearMade DESC");
             }
             
             if(view.box15.isSelected())
             {
-                
+                model.execQuery("SELECT model, make, color, price FROM car WHERE model = '328i' AND make = 'BMW' AND color = 'Red' ORDER BY yearMade DESC");
             }
         }
     }

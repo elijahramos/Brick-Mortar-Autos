@@ -991,4 +991,257 @@ public class View extends JFrame {
             e.printStackTrace();
         }
     }
+    
+    public void printQuery5(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Department", "Unused Vacation Days");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String department = rs.getString("department");
+                String unused = rs.getString("unusedVacationDays");
+
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(department), dispNull(unused));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery6(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Credential Name", "Pay Rate");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String credential = rs.getString("credentialsName");
+                String payRate = rs.getString("payRate");
+
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(credential), dispNull(payRate));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery7(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Sales Count");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String sales = rs.getString("salesCount");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(sales));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery8(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Gross Sales");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String gross = rs.getString("grossSales");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(gross));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery9(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s\n";
+        System.out.printf(displayFormat, "First Name", "Last Name", "Loyal Sales");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String first = rs.getString("firstName");
+                String last = rs.getString("lastName");
+                String loyal = rs.getString("loyalSales");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(first), dispNull(last), dispNull(loyal));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery10(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s\n";
+        System.out.printf(displayFormat, "Make", "Model", "Year Made");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String make = rs.getString("make");
+                String model = rs.getString("model");
+                String yearMade = rs.getString("yearMade");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(make), dispNull(model), dispNull(yearMade));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery11(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "Make", "Model", "Year Made", "Stock of Model", "Car Type");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String make = rs.getString("make");
+                String model = rs.getString("model");
+                String yearMade = rs.getString("yearMade");
+                String stock = rs.getString("stockOfModel");
+                String carType = rs.getString("carType");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(make), dispNull(model), dispNull(yearMade), dispNull(stock), dispNull(carType));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
+    
+    public void printQuery12(ResultSet rs)
+    {
+        String displayFormat="%-5s%-15s%-15s%-15s\n";
+        System.out.printf(displayFormat, "Make", "Model", "Year Made", "Car Type");
+        try
+        {
+        while (rs.next()) {
+                //Retrieve by column name
+                String make = rs.getString("make");
+                String model = rs.getString("model");
+                String yearMade = rs.getString("yearMade");
+                String carType = rs.getString("carType");
+                
+                //Display values
+                System.out.printf(displayFormat,
+                        dispNull(make), dispNull(model), dispNull(yearMade), dispNull(carType));
+            }
+        System.out.println();
+        rs.close();
+        }
+        catch (SQLException se)
+        {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+    }
 }
