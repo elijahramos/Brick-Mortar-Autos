@@ -89,27 +89,27 @@ public class Controller implements ActionListener {
         {
             if(view.box1.isSelected())
             {
-                view.printQuery1(model.execQuery("SELECT firstName, lastName, address, phone, lastPurchaseDate FROM customers WHERE lastPurchaseDate <= \"12-12-12\" ORDER BY lastName ASC"));
+                view.printQuery1(model.execQuery("SELECT firstName, lastName, address, phone, lastPurchaseDate FROM customers WHERE lastPurchaseDate <= \"4-15-18\" ORDER BY lastName ASC"));
             }
             
             if(view.box2.isSelected())
             {
-                view.printQuery2(model.execQuery("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color != 'Magenta' ORDER BY firstName"));
+                view.printQuery2(model.execQuery("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON sale.VIN = car.VIN WHERE car.color != 'Indigo' AND (2018-YEAR(dateLastPay)) <= 5  AND (2018-YEAR(dateLastPay)) >= 3 ORDER BY lastPurchaseDate DESC"));
             }
             
             if(view.box3.isSelected())
             {
-                view.printQuery3(model.execQuery("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color = 'Magenta' ORDER BY firstName"));
+                view.printQuery3(model.execQuery("SELECT firstName, lastName, phone, make, model, yearMade, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID LEFT JOIN car ON car.VIN = sale.VIN WHERE car.color = 'Magenta' AND (2018-YEAR(dateLastPay)) <= 5 AND (2018-YEAR(dateLastPay)) >= 3 ORDER BY lastPurchaseDate DESC"));
             }
             
             if(view.box4.isSelected())
             {
-                view.printQuery4(model.execQuery("SELECT firstName, lastName, phone, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID WHERE YEAR(lastPurchaseDate) - YEAR(dateLastPay) < 2 ORDER BY firstName"));
+                view.printQuery4(model.execQuery("SELECT firstName, lastName, phone, lastPurchaseDate FROM customers INNER JOIN sale ON sale.customerID = customers.customerID WHERE YEAR(lastPurchaseDate) - YEAR(dateLastPay) < 2 ORDER BY lastPurchaseDate DESC"));
             }
             
             if(view.box5.isSelected())
             {
-                
+                model.execQuery("SELECT firstName, lastName, department, unusedVacationDays FROM employee WHERE unusedVacationDays >= 1 ORDER BY lastName ASC");
             }
             
             if(view.box6.isSelected())
